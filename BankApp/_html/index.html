@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Contract Interaction</title>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+  </head>
+  <body>
+    <h1>Bank Contract Interaction</h1>
+    <p>Current Balance: <span id="balance"></span></p>
+    <p>Current Loan: <span id="loan"></span></p>
+    php Copy code
+    <div>
+      <h2>Deposit Funds</h2>
+      <label for="depositAmount">Amount:</label>
+      <input type="number" id="depositAmount" />
+      <button onclick="deposit()">Deposit</button>
+    </div>
+
+    <div>
+      <h2>Withdraw Funds</h2>
+      <label for="withdrawAmount">Amount:</label>
+      <input type="number" id="withdrawAmount" />
+      <button onclick="withdraw()">Withdraw</button>
+    </div>
+
+    <div>
+      <h2>Get Loan</h2>
+      <label for="loanAmount">Amount:</label>
+      <input type="number" id="loanAmount" />
+      <button onclick="getLoan()">Get Loan</button>
+    </div>
+
+    <div>
+      <h2>Create Fixed Deposit</h2>
+      <label for="fdAmount">Amount:</label>
+      <input type="number" id="fdAmount" />
+      <label for="fdYears">Years:</label>
+      <input type="number" id="fdYears" />
+      <button onclick="createFD()">Create Fixed Deposit</button>
+    </div>
+
+  </body>
+  <script src="./index.js"></script>
+</html>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script> -->
+
+<!-- <script>
+      var contract;
+      var amt1 = document.getElementById("value");
+      var balance = document.getElementById("balance");
+
+      window.onload = () => {
+        web3 = new Web3(web3.currentProvider);
+        var address = "0x9d232d4874a5400c9d3f6Bf05d9e1c8524Dd7Ac6";
+        var abi = [
+          
+        ];
+        contract = new web3.eth.Contract(abi, address);
+        contract.methods
+          .getBalance()
+          .call()
+          .then((data) => {
+            balance.innerText = data;
+          });
+      };
+      var deposit = async () => {
+        var amt = 0;
+        amt = parseInt(amt1.innerText);
+        web3.eth
+          .getAccounts()
+          .then((accounts) => {
+            var acc = accounts[0];
+            return contract.methods.deposit(amt).send({ from: acc });
+          })
+          .then(console.log)
+          .catch(console.log);
+      };
+
+      var getBalance = () => {
+        contract.methods
+          .getBalance()
+          .call()
+          .then((data) => {
+            balance.innerText = data;
+          });
+      };
+    </script> -->

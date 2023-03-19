@@ -4,6 +4,14 @@ pragma solidity ^0.8.0;
 contract Arrays {
     // Array is powerful linear datastructure, that can hold huge amount of data with a same type and single name.
 
+/* 
+In solidity int, uint & bool directly store the data but they dont
+store references.
+
+Whereas arrays atore the references to the actual value but not the value.
+*/
+
+
     // Uint array
     uint256[] public a = [1, 2, 3, 4, 5];
 
